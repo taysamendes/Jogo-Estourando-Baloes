@@ -8,17 +8,14 @@ function iniciaJogo(){
 
     if(nivel == 1){
         tempo_segundos = 120;
-
     }
 
     if(nivel ==2){
         tempo_segundos = 60;
-
     }
 
     if(nivel==3){
         tempo_segundos = 30;
-
     }
 
     //INSERINDO SEGUNDOS NO SPAN
@@ -26,7 +23,6 @@ function iniciaJogo(){
 
     //GERANDO BALÕES
     var qtd_baloes = 80;
-
     criarBaloes(qtd_baloes);
 
     //IMPRIMIR QTD BALOES INTEIROS
@@ -36,8 +32,6 @@ function iniciaJogo(){
     document.getElementById('baloes_estourados').innerHTML = 0;
 
     contagem_tempo(tempo_segundos+1)
-
-
 }
 
 function contagem_tempo(segundos){
@@ -47,9 +41,9 @@ function contagem_tempo(segundos){
         game_over();
         return false
     }
+
     document.getElementById('cronometro').innerHTML = segundos;
     timerId = setTimeout("contagem_tempo("+segundos+")",1000)
-    
 }
 
 function game_over(){
@@ -66,7 +60,6 @@ function criarBaloes(qtd){
             estourar(this);
         }
         document.getElementById('cenario').appendChild(balao);
-
     }
 }
 
@@ -94,12 +87,10 @@ function pontuacao(acao){
 }
 
 function situacao_jogo(baloes_estourados,baloes_inteiros){
-
     if(baloes_inteiros == 0){
         alert('Parabéns. Você venceu!')
         parar_jogo();
     }
-
 }
 
 function parar_jogo(){
